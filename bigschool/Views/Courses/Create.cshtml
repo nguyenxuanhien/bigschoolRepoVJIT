@@ -1,0 +1,22 @@
+﻿@Model BigSchool.Models.Cousre
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<from>
+    <div class="from-group">
+        @Html.LabelFor(m => m.Place)
+        @Html.TextBoxFor(m => m.Place, new { @Class = "from-control" })
+    </div>
+    <div class="from-group">
+        @Html.LabelFor(m => m.DateTime)
+    </div>
+    <div class="from-group"></div>
+    <div class="from-group"></div>
+    <div class="from-group"></div>
+    <div class="from-group"></div>
+
+</from>
+
+<h2>Create</h2>
+
