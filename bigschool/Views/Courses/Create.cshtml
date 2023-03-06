@@ -1,4 +1,4 @@
-﻿@Model BigSchool.Models.Cousre
+﻿@model bigschool.ViewModels.CourseViewModels
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,7 +9,17 @@
         @Html.TextBoxFor(m => m.Place, new { @Class = "from-control" })
     </div>
     <div class="from-group">
-        @Html.LabelFor(m => m.DateTime)
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "from-control" })
+    </div>
+    <div class="from-group">
+        @Html.LabelFor(m => m.Time)
+        @Html.TextBoxFor(m => m.Time, new { @class = "from-control" })
+    </div>
+    <div class="from-group">
+        @Html.LabelFor(m => m.Category)
+        @Html.DropDownListFor(m => m.Category,
+        new SelectList(Model.categories, "Id", "Name "), "", new { @class = " from-control" })
     </div>
     <div class="from-group"></div>
     <div class="from-group"></div>
