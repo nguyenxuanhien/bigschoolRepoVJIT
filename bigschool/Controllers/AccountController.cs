@@ -151,7 +151,7 @@ namespace bigschool.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email ,Name = model.Name };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -422,8 +422,7 @@ namespace bigschool.Controllers
 
             base.Dispose(disposing);
         }
-
-        #region Helpers
+   #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 

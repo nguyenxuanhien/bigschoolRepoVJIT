@@ -68,18 +68,21 @@ namespace bigschool.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at ")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Comfirm Password")]
+        [Compare("Password", ErrorMessage = "The Password and")]
         public string ConfirmPassword { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string Name { get; set; }
     }
+}
 
     public class ResetPasswordViewModel
     {
@@ -109,4 +112,3 @@ namespace bigschool.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
-}
